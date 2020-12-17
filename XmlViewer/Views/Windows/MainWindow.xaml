@@ -6,7 +6,7 @@
         xmlns:l="clr-namespace:XmlViewer"                
         Height="450" Width="800"
         DataContext="{Binding MainWindowVM, Source={StaticResource Locator}}"
-        Title="{Binding Title}" 
+        Title="{Binding Source={StaticResource MainWindowTitle}}" 
         >
     <Grid>
 

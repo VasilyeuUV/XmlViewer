@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using XmlViewer.Services;
+using XmlViewer.ViewModels;
 
 namespace XmlViewer
 {
@@ -20,12 +22,20 @@ namespace XmlViewer
 
         #endregion
 
+        /// <summary>
+        /// Для обращения к сервисам
+        /// </summary>
+        public static IServiceProvider Services => Host.Services;
 
 
-        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
-        }
-
+        /// <summary>
+        /// Регистрирация сервисов и ViewModels
+        /// </summary>
+        /// <param name="host"></param>
+        /// <param name="services"></param>
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddServices()
+            .AddViewModels();
 
 
         #region START/STOP HOST

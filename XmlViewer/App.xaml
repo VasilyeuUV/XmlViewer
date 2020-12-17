@@ -12,6 +12,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Languages/lang.xaml"/>
                 <ResourceDictionary Source="Resources/commands.xaml"/>
+                <ResourceDictionary Source="Resources/Themes/defaultTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

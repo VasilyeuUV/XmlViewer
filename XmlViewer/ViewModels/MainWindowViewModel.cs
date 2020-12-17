@@ -60,7 +60,17 @@ namespace XmlViewer.ViewModels
         {
             if (!_userDialog.OpenFile((string)Application.Current.Resources["Dialog_OpenFile_Title"], out var filePath))
             {
-                SelectedFile = new FileInfo(filePath);
+                if (filePath == null) { return; }
+                try
+                {
+                    SelectedFile = new FileInfo(filePath);
+                }
+                catch (System.Exception)
+                {
+
+                }
+
+                
             }
         } 
         #endregion

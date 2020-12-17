@@ -8,6 +8,13 @@
         DataContext="{Binding MainWindowVM, Source={StaticResource Locator}}"
         Title="{Binding Source={StaticResource MainWindowTitle}}" 
         >
+    
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="Q" Command="{StaticResource CloseWindowCommand}"/>
+        <KeyBinding Modifiers="Ctrl" Key="O" Command="{Binding OpenFileCommand}"/>
+    </Window.InputBindings>    
+    
+    
     <DockPanel>
         
         <!--MAIN MENU-->

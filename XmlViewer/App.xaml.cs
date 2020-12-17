@@ -25,5 +25,26 @@ namespace XmlViewer
         internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
         }
+
+
+
+        #region START/STOP HOST
+
+        protected override async void OnStartup(StartupEventArgs e)
+        {
+            var host = Host;
+            base.OnStartup(e);
+
+            await host.StartAsync();
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            using (Host) await Host.StopAsync();
+        } 
+
+        #endregion
+
     }
 }

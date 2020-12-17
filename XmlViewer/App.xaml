@@ -1,9 +1,12 @@
 ﻿<Application x:Class="XmlViewer.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:XmlViewer"
+             xmlns:l="clr-namespace:XmlViewer"
+             xmlns:vm="clr-namespace:XmlViewer.ViewModels"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

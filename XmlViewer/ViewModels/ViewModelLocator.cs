@@ -4,6 +4,6 @@ namespace XmlViewer.ViewModels
 {
     internal class ViewModelLocator
     {
-        public MainWindowViewModel MainWindowViewModel => App.Services.GetRequiredService<MainWindowViewModel>();
+        public MainWindowViewModel MainWindowVM => App.Services.GetRequiredService<MainWindowViewModel>();
     }
 }

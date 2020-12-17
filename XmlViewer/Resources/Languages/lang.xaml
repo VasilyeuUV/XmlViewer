@@ -21,6 +21,11 @@
     <v:String x:Key="MainMenu_File_Exit">Выход</v:String>
 
 
+    <!-- STATUS BAR -->
+    <v:String x:Key="StatusBar_Status">Статус</v:String>
+
+
+
     <!--ERRORS-->
     <v:String x:Key="ReverseConvertionNotSupportedException">Reverse conversion is not supported</v:String>
 

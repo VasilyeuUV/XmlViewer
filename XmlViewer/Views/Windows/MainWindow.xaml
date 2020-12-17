@@ -8,7 +8,27 @@
         DataContext="{Binding MainWindowVM, Source={StaticResource Locator}}"
         Title="{Binding Source={StaticResource MainWindowTitle}}" 
         >
-    <Grid>
+    <DockPanel>
+        
+        <!--MAIN MENU-->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{Binding Source={StaticResource MainMenu_File}}">
+                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Open}}"/>
+                <Separator/>
+                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Exit}}"/>
+            </MenuItem>
+        </Menu>
 
-    </Grid>
+        <!--STATUS BAR-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem DockPanel.Dock="Right">
+                <ResizeGrip/>
+            </StatusBarItem>
+            <StatusBarItem Content="{Binding Source={StaticResource StatusBar_Status}}"/>
+        </StatusBar>
+
+        <!--CONTENT-->
+        <Grid></Grid>
+        
+    </DockPanel>
 </Window>

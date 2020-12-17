@@ -6,7 +6,7 @@ namespace XmlViewer.ViewModels
     {
         public static IServiceCollection AddViewModels(this IServiceCollection viewModels) => viewModels
             .AddSingleton<MainWindowViewModel>()
-            .AddSingleton<MainMenuViewModel>()
+            //.AddSingleton<MainMenuViewModel>()
             ;
     }
 }

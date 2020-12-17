@@ -7,10 +7,16 @@
     <!--MAIN WINDOW-->
     <v:String x:Key="MainWindowTitle">Xml Viewer</v:String>
 
+    
     <!--DIALOGS-->
-
     <!--Titles-->
     <v:String x:Key="Dialog_OpenFile_Title">Открыть файл</v:String>
+
+    <!--Titles-->
+    <v:String x:Key="LeftPanel_Title">Файлы</v:String>
+    <v:String x:Key="RightPanel_Title">Узлы</v:String>
+    <v:String x:Key="RightPanel_QueryTitle">Запрос:</v:String>
+    
 
 
     <!--BUTTONS-->

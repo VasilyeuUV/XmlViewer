@@ -39,7 +39,51 @@
         </StatusBar>
 
         <!--CONTENT-->
-        <Grid></Grid>
-        
+
+        <Grid Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="100" Width="Auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Width="3"/>
+            
+            <GroupBox Grid.Column="0"
+                      Header="{Binding Source={StaticResource LeftPanel_Title}}">
+                <ListBox ItemsSource="{Binding Files}"
+                         SelectedItem="{Binding SelectedFile}"
+                         DisplayMemberPath="FileName"/>
+            </GroupBox>
+
+            <DockPanel Grid.Column="1" Margin="1">
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Column="0"
+                               Text="{Binding Source={StaticResource RightPanel_QueryTitle}}"
+                               Margin="5"/>
+                    
+                    <TextBox Grid.Column="1"/>
+                </Grid>
+
+                <GroupBox DockPanel.Dock="Right"
+                          Header="{Binding Source={StaticResource RightPanel_Title}}"
+                          Margin="0,1"
+                          MinWidth="100">
+                    <ListBox />
+                </GroupBox>
+
+                <Border BorderThickness="1" BorderBrush="DarkSlateGray" 
+                        Margin="20,3,20,5">
+                    <Border.Effect>
+                        <DropShadowEffect Opacity="0.5" RenderingBias="Performance" Direction="315" ShadowDepth="3" BlurRadius="3" />
+                    </Border.Effect>
+                    <TextBlock TextWrapping="Wrap"
+                               Padding="5"/>
+                </Border>
+            </DockPanel>
+        </Grid>   
     </DockPanel>
 </Window>

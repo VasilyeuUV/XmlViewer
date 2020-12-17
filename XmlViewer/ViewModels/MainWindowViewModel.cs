@@ -1,7 +1,10 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using XmlViewer.Infrastructure.Commands.Base;
+using XmlViewer.Models;
 using XmlViewer.Services.Dialogs;
 using XmlViewer.ViewModels.Base;
 
@@ -21,12 +24,6 @@ namespace XmlViewer.ViewModels
 
         #endregion
 
-        //#region MAIN MENU
-
-        //private MainMenuViewModel _mainMenuViewModel = null;
-        //public MainMenuViewModel MainMenuViewModel => _mainMenuViewModel ??= new MainMenuViewModel();
-
-        //#endregion
 
         /// <summary>
         /// CTOR
@@ -47,6 +44,14 @@ namespace XmlViewer.ViewModels
         #endregion
 
 
+        #region FILES COLLECTION
+
+        private ICollection<FileModel> _files = null;
+
+        public ICollection<FileModel> Files => _files ??= new ObservableCollection<FileModel>();
+
+        #endregion
+
 
         #region COMMANDS
 
@@ -56,21 +61,28 @@ namespace XmlViewer.ViewModels
 
         public ICommand OpenFileCommand => _openFileCommand ??= new LambdaCommand(OnOpenFileCommandExecuted);
 
+        
+
         private void OnOpenFileCommandExecuted()
         {
-            if (!_userDialog.OpenFile((string)Application.Current.Resources["Dialog_OpenFile_Title"], out var filePath))
+            if (_userDialog.OpenFile((string)Application.Current.Resources["Dialog_OpenFile_Title"], out var filePath))
             {
                 if (filePath == null) { return; }
                 try
                 {
                     SelectedFile = new FileInfo(filePath);
                 }
-                catch (System.Exception)
+                catch (System.Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
 
-                
+                Files.Add(new FileModel()
+                {
+                    FilePath = SelectedFile,
+                    FileName = SelectedFile.Name
+                });
+
             }
         } 
         #endregion

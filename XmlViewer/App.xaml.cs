@@ -1,11 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using XmlViewer.Services;
 using XmlViewer.ViewModels;
@@ -14,6 +11,16 @@ namespace XmlViewer
 {
     public partial class App
     {
+        #region Active Window 
+
+        /// <summary> Окно в фокусе </summary>
+        public static Window FocusedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsFocused);
+
+        /// <summary> Активное Окно </summary>
+        public static Window ActivedWindow => Current.Windows.Cast<Window>().FirstOrDefault(w => w.IsActive);
+
+        #endregion
+
         #region HOST
 
         private static IHost __host;

@@ -8,7 +8,7 @@ namespace XmlViewer.Infrastructure.Commands.Base
 
         #region Executable
 
-        private bool _executable;
+        private bool _executable = true;
 
         public bool Executable
         {

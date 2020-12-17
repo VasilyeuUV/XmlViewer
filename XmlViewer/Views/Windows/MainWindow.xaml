@@ -13,9 +13,11 @@
         <!--MAIN MENU-->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{Binding Source={StaticResource MainMenu_File}}">
-                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Open}}"/>
+                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Open}}"
+                          />
                 <Separator/>
-                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Exit}}"/>
+                <MenuItem Header="{Binding Source={StaticResource MainMenu_File_Exit}}"
+                          Command="{StaticResource CloseWindowCommand}"/>
             </MenuItem>
         </Menu>
 

@@ -6,7 +6,13 @@
     
     <!--MAIN WINDOW-->
     <v:String x:Key="MainWindowTitle">Xml Viewer</v:String>
-    
+
+    <!--DIALOGS-->
+
+    <!--Titles-->
+    <v:String x:Key="Dialog_OpenFile_Title">Открыть файл</v:String>
+
+
     <!--BUTTONS-->
     <v:String x:Key="Btn_Ok">Ok</v:String>
     <v:String x:Key="Btn_Cancel">Cancel</v:String>
